@@ -1,0 +1,32 @@
+.navbar {
+    padding: 0 !important;
+}
+.currentItem {
+    border-bottom: 2px solid white;
+}
+.nav-item {
+    margin: 0 10px 0;
+}
+html {scroll-behavior: smooth;}
+
+/* body {
+    font-family: "poppins", sans-serif !important;
+    overflow-x: hidden;
+} */
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.lined:after {
+	content: "";
+	width: 180px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #db584e;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+    opacity: .8;
+}

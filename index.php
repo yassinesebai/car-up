@@ -1,6 +1,5 @@
 <?php
-
-
+include('connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +8,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
   <!-- css/Bootstrap links -->
   <link rel="stylesheet" href="styles/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -22,12 +26,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 
+  <!-- sweetalert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- poppins font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Candal&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Map Box  -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.0/mapbox-gl.css' rel='stylesheet' />
   <title>Home</title>
@@ -59,40 +64,35 @@
   </nav>
 
   <!-- Second navbar  -->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse p-md-3 navbar-collapse" id="navbarNav">
       <ul class="ml-md-5 navbar-nav">
         <li class="nav-item active">
-          <a class="currentItem ml-lg-5 nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="currentItem ml-lg-5 nav-link navbarlink" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#process">How to rent</a>
+          <a class="nav-link navbarlink" href="#process">How to rent</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Cars</a>
+          <a class="nav-link navbarlink" href="cars.php">Cars</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#aboutus">About us</a>
+          <a class="nav-link navbarlink" href="#aboutus">About us</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" target="_blank" href="contact.php">Contact us</a>
+          <a class="nav-link navbarlink" href="#contactus">Contact us</a>
         </li>
       </ul>
 
     </div>
-    <form class="form-inline my-2 mr-5 my-lg-0 ml-auto">
-      <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </nav>
 
 
-  <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-    <i class="bi bi-arrow-up"></i>
-  </button>
+  <button type="button" class="btn btn-danger btn-floating" id="btn-back-to-top">
+    <i class="fa-solid fa-arrow-up-long"></i> </button>
   <!-- Header -->
   <div class="row header bg-light">
     <div class="title col-md-6 p-5 d-flex align-items-center">
@@ -100,18 +100,18 @@
         <h2>Search, Book, and enjoy your trip </h2>
         <h1 class="mb-md-4">Find your <span class="text-danger">car</span> and <span class="text-danger">rent</span> it in seconds</h1>
         <h2 class="mb-md-5 desc">Book your car now at car rental ! No hassle , same price , and instant online booking</h2>
-        <button class="mr-md-2 booknow btn btn-danger">Book Now ></button>
+        <a href="cars.php"><button class="mr-md-2 booknow btn btn-danger">Book Now ></button></a>
         <button class="learnmore btn btn-danger">Learn more</button>
       </div>
     </div>
     <div class="car col-md-6 d-flex align-items-center">
-      <img id="carpic" src="assets/car.png" alt="">
+      <img id="carpic" src="assets/car.png" style="width: 816px !important; height: 432px !important;" alt="">
     </div>
   </div>
 
   <!-- Disponible line  -->
   <div id="process" class="row bg-success av align-items-center justify-content-center">
-    <h3 class="mt-1">20+ cars are available to rent now, <a class="deal" href="">Get a deal !</a> </h3>
+    <h3 class="mt-1">20+ cars are available to rent now, <a class="deal" href="cars.php">Get a deal !</a> </h3>
   </div>
 
   <!-- Process / Booking steps section -->
@@ -146,11 +146,11 @@
   <section class="about">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 d-md-block d-none">
           <img class="img-fluid" src="assets/about us.svg" alt="">
         </div>
         <div class="col-md-6">
-          <div class=" ml-md-5 aboutTitle">
+          <div class=" ml-md-5 mx-2 aboutTitle">
             <h1>Car Rental</h1>
             <h2 class="mt-2 mb-4">We help make you enjoy your trips</h2>
             <h3>with over 5+ year of experience, we are a car renting company that offers high quality, comfy and fast vehicules with the best prices <br>
@@ -158,19 +158,19 @@
             <div class="row mt-4">
               <div class="col-4"><img src="assets/numcars.png" alt="">
                 <div class="d-flex">
-                  <h1 class="counter mt-3">25</h1>
-                  <span class="smallestText">Cars to rent</span>
+                  <h1 class="counter mt-3 numbos">25</h1>
+                  <span class="smallestText">Comfy cars</span>
                 </div>
               </div>
               <div class="col-4"><img src="assets/client.png" alt="">
                 <div class="d-flex">
-                  <h1 class="counter mt-3">100</h1><b class="smalltext">+</b>
+                  <h1 class="counter mt-3 numbos">100</h1>
                   <span class="smallestText">Happy clients</span>
                 </div>
               </div>
               <div class="mt-3 col-4"><img src="assets/exp.png" alt="">
                 <div class="d-flex">
-                  <h1 class="counter mt-3">5</h1>
+                  <h1 class="counter mt-3 numbos">5</h1>
                   <span class="smallestText">Years of experience</span>
                 </div>
               </div>
@@ -196,6 +196,7 @@
       </div>
     </div>
   </section>
+
   <div class="review bg-light">
     <div class="container">
       <div class="row">
@@ -232,38 +233,75 @@
       </div>
     </div>
   </div>
-  <section class="map-area pb-5">
+
+  <div id="contactus"></div>
+  <section class="contactForm pb-5">
     <div class="container">
-      <h1 class="carouselTitle">Come meet us</h1>
-      <div class="row">
-        <div class="col-lg-7">
-          <div id='map'></div>
+      <h1 class="carouselTitle">Contact us</h1>
+      <div class="row contact">
+        <div class="col-md-6 my-4">
+          <form id="contact-form" name="contact-form" method="POST">
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+                <div class="md-form pt-2 mb-3">
+                  <label for="fullname">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" id="fullname" name="fullname" placeholder="E.g: *Juan Carlos*" required class="form-control">
+                </div>
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="md-form mb-3 pt-2">
+                  <label for="email">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="mail@example.com" required class="form-control">
+                </div>
+              </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+
+                <div class="md-form pt-2">
+                  <label for="email">Tell me about it <span class="text-danger">*</span></label>
+                  <textarea id="message" name="message" rows="5" placeholder="Write here..." required class="form-control md-textarea"></textarea>
+                </div>
+
+              </div>
+            </div>
+            <div id="error" class=" text-danger mt-3"></div>
+            <!--Grid row-->
+            <div class="text-center mt-2 text-md-left">
+              <button type="submit" id="submit" class="btn mt-2">Send Message</button>
+            </div>
+          </form>
         </div>
-        <div class="col-lg-5 mt-4">
-          <p class="mt-3 ml-4"><img src="assets/add.png" /> <span class="text-secondary lead"> Rue souhaib roumi CASA</span></p>
-          <p class="ml-4"><img src="assets/fix.png" /> <span class="text-secondary lead"> 05 22 37 38 18</span></p>
-          <p class="ml-4"><img src="assets/wt.png" /> <span class="text-secondary lead"> +212 6 55 67 68 18</span></p>
-          <p class="ml-4"><img src="assets/em.png" /> <span class="text-secondary lead"> info@carrental.ma</span></p>
+        <div class="col-md-6 pt-4 pl-md-5 my-4 col-infos">
+          <div id='map'></div>
+          <p class="mt-4 ml-2"><img src="assets/add.png" /> <span class="text-secondary"> Rue souhaib roumi CASA</span></p>
+          <p class="ml-2"><img src="assets/fix.png" /> <span class="text-secondary"> 05 22 37 38 18</span></p>
+          <p class="ml-2"><img src="assets/em.png" /> <span class="text-secondary"> info@carrental.ma</span></p>
         </div>
       </div>
     </div>
   </section>
-  <footer class="bg-dark pt-5">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="text-center position-relative text-light mb-4">CAR RENTAL</h3>
-        <div class="d-flex justify-content-center mb-1 text-light p-1">
-          <i class="bi bi-twitter m-3"></i>
-          <i class="bi bi-facebook m-3"></i>
-          <i class="bi bi-instagram m-3"></i>
-          <i class="bi bi-linkedin m-3"></i>
-          <i class="bi bi-whatsapp m-3"></i>
-        </div>
-        <p class="text-center">COPYRIGHT &copy; 2022 BY - Yassine Sebai</p>
-      </div>
-    </div>
-  </footer>
+  <?php include "footer/index.html"; ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+  </script>
   <script src="js/home.js"></script>
 </body>
 

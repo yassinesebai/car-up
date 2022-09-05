@@ -1,0 +1,116 @@
+section {
+    margin: 0 4rem 0;
+}
+
+#carimg {
+    width: 1024px;
+    padding: 8%;
+}
+.desc {
+    background-color: #f0edeb;
+    margin: 2.5% 30px 4%;
+    text-align: center;
+    border-radius: 15px;
+}
+input[type=date] {
+    font-size: 15px;
+}
+
+.card {
+    margin-top: 33px;
+}
+
+input[type=text],input[type=email],input[type=tel],textarea {
+    width: 50%;
+    color: #6c757d !important;
+    padding: 3px;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    pointer-events: none !important;
+}
+
+.lightText{
+    margin: 5%;
+    color: #36393d !important;
+
+}
+.headingCar {
+    font-size: 28px;
+    margin: 5% 5% 0;
+}
+.heading1 {
+    margin: 5% 5% 7%;
+    font-size: 25px;
+}
+
+.heading2 {
+    margin: 5%;
+    margin-top: 15%;
+    font-size: 20px
+}
+
+.text1 {
+    color: black;
+    font-weight: 700
+}
+
+/* .col-md-5 {
+    height: 100vh !important;
+}
+.first {
+    height: 70% !important;
+}
+.second {
+    height: 30% !important;
+} */
+.row1 {
+    font-size: 14px
+}
+
+.row2 {
+    font-size: 16px;
+    font-weight: 600
+}
+
+#line {
+    background-color: #b1b1b1;
+    height: 26px;
+    width: 1.5px;
+    border-radius: 15px;
+}
+
+.flex-column p {
+    margin-left: 0 !important;
+}
+
+.subRow {
+    margin-left: 10%;
+    margin-bottom: 2%;
+    margin-top: 5%
+}
+
+.total {
+    margin: 5%
+}
+
+.totalText {
+    font-weight: 700
+}
+
+.totalText2 {
+    font-weight: 700;
+    font-size: 30px
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 998px) {
+    input, textarea {
+        width: 100% !important;
+        margin: 7px 0 7px !important;
+    }
+}

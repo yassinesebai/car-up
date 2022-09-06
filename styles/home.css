@@ -87,6 +87,7 @@ button:focus {
 }
 .col-md-6 {
   height: 74vh;
+  overflow: hidden !important;
 }
 .cart .col-md-6 {
   height: initial !important;
@@ -95,8 +96,13 @@ button:focus {
     height: 60vh !important;
 } */
 .process .col-md-4 {
-  margin: 6rem 0 8rem;
+  margin: 1rem 0rem;
 }
+
+.py-6 {
+  padding: 4rem 0;
+}
+
 .process {
   margin-top: 7rem;
 }
@@ -230,7 +236,7 @@ button:focus {
   padding: 0 30px 0;
   font-size: 14px;
   text-align: center;
-  oerflow: hidden;
+  overflow: hidden;
   min-height: 290px;
 }
 .carousel .item .img-box {

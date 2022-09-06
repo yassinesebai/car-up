@@ -12,6 +12,8 @@ include('connect.php');
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
+  <link rel="icon" href="assets/favicon.png" sizes="192x192" />
+
   <!-- css/Bootstrap links -->
   <link rel="stylesheet" href="styles/home.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -121,7 +123,7 @@ include('connect.php');
         <h2 class="text-center smalltext">We offer</h2>
         <h1 class="text-center">a Quick and Easy car rental process</h1>
       </div>
-      <div class="row text-center">
+      <div class="row py-6 text-center">
         <div class="col-md-4 ">
           <img src="assets/search.png" alt="">
           <h2>1. Find a car</h2>

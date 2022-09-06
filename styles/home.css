@@ -419,6 +419,12 @@ textarea {
 }
 /* (Phone screen) text*/
 @media screen and (max-width: 768px) {
+  .smicon {
+    height: 18px !important;
+  }
+  .navicon {
+    height: 14px !important;
+  }
   .col-md-6 {
     text-align: center;
   }

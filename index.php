@@ -60,7 +60,6 @@ include('connect.php');
     <ul class="navbar-nav socials ml-auto">
       <a href=""><img class="smicon px-2" src="assets/tw.svg" alt="" /></a>
       <a href=""><img class="smicon px-2" src="assets/fb.svg" alt="" /></a>
-      <a href=""><img class="smicon px-2" src="assets/ln.svg" alt="" /></a>
       <a href=""><img class="smicon px-2" src="assets/ig.svg" alt="" /></a>
     </ul>
   </nav>
